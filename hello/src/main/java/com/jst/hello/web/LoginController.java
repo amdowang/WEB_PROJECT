@@ -1,4 +1,4 @@
-package com.jst.hello;
+package com.jst.hello.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,9 +12,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String login() {
-		System.out.println("come login");
-		return "hello";
+	public ModelAndView login() {
+		ModelAndView mv = new ModelAndView("hello");
+		mv.addObject("name", " Hello world £¬ test my first spring mvc ! ");
+		return mv;
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
