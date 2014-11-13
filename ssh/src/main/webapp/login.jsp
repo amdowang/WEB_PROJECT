@@ -9,10 +9,16 @@
 <title>springmvc login page</title>
 </head>
 <body>
+	<%request.setAttribute("abc", "asdfasdfds"); %>
 	<form id="loginForm" action="${ctx}/login" method="post">
+	${pageContext.request.contextPath}
 		<input type="text" id="username" name="username" value="${username}" />
 		<input type="password" id="password" name="password" /> <input
 			id="submit_btn" type="submit" value="登录" />
+			${ctx}
+			${abc}
+			<c:out value="abc"></c:out>
+			<c:out value="${abc}"></c:out>
 	</form>
 </body>
 </html>
