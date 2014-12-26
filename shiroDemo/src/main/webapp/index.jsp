@@ -51,19 +51,12 @@
 		
 	<div title="功能菜单" data-options="region:'west',split:true" style="width:245px;">
 		<div class="easyui-accordion" data-options="border:false,fit:true,selected:-1">
-			<div title="专家库" data-options="iconCls:'icon-expert'">
+			<div title="系统管理" data-options="iconCls:'icon-expert'">
 				<ul class="menu-box">
 					<li>
 						<div>
 							<a href="javascript:void(0)" name="system/user_toList.action">
 								<span>用户管理1</span>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div>
-							<a href="javascript:void(0)" name="system/user_toList.action">
-								<span>用户管理2</span>
 							</a>
 						</div>
 					</li>
