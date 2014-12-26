@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+
+.rep-search{
+	width: 100%;
+	background: #E6E6FA;
+}
+
+.rep-search .rep-search-title{
+	height: 30px;
+}
+
+.rep-search .rep-search-title td{
+	text-align: center;
+}
+
+.rep-search .rep-search-row{
+	height: 35px;
+}
+
+.rep-search .rep-search-row td{
+	width: auto;
+	text-align: center;
+	background: #FFFFFF;
+}
+
+.rep-data-tb{
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #000000;
+}
+
+.rep-data-tb th{
+	width: auto;
+	height: 25px;
+	text-align: center;
+	border: 1px solid #000000;
+}
+
+.rep-data-tb td{
+	width: auto;
+	height: 25px;
+	text-align: center;
+	border: 1px solid #000000;
+}

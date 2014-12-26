@@ -1,0 +1,103 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0 auto;
+	font-size: 12px;
+}
+
+body {
+	background: #0d3e8d;
+}
+
+ul,li{
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+span {
+	height: 20px;
+	line-height: 20px;
+	display: block;
+	color: #FFFFFF;
+	margin-bottom: 8px;
+}
+
+p {
+	width: 50px;
+	float: left;
+}
+
+img {
+	width: 60px;
+	height: 19px;
+}
+
+.login-box {
+	width: 1024px;
+	height: 715px;
+	background: url(../Images/login.jpg) no-repeat center;
+	position: relative;
+}
+
+.login-msg {
+	width: 250px;
+	height: 80px;
+	margin-bottom: 7px;
+	position: absolute;
+	left: 498px;
+	top: 315px;
+}
+
+.login-input {
+	height: 16px;
+	width: 120px;
+	float: left;
+	border: 1px #0066FF solid;
+	background-color: transparent;
+	background: #fff;
+}
+
+.login-btn {
+	width: 220px;
+	position: absolute;
+	left: 495px;
+	top: 400px;
+}
+
+.login-error {
+	width: 220px;
+	position: absolute;
+	left: 500px;
+	top: 425px;
+}
+
+.login-error span,label{
+	color:#FF0000;
+}
+
+.btn1 {
+	width: 75px;
+	height: 25px;
+	margin-right: 25px;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+}
+
+.btn2 {
+	width: 75px;
+	height: 25px;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+}
+
+.text2 {
+	height: 16px;
+	width: 60px;
+	border: 1px #0066FF solid;
+	background-color: transparent;
+	background: #fff;
+	float: left;
+}

@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>泥头车GPS监管系统</title>
+<link rel="stylesheet" type="text/css" href="<%=basePath %>Css/index.css">
+<link rel="stylesheet" type="text/css" href="Js/Plugins/EasyUI/themes/ui-cupertino/easyui.css">
+<link rel="stylesheet" type="text/css" href="Js/Plugins/EasyUI/themes/icon.css">
+<script type="text/javascript" src="Js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="Js/Plugins/EasyUI/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="Js/Plugins/EasyUI/easyui-lang-zh_CN.js"></script>
+</head>
+<body class="easyui-layout">
+	
+	<div data-options="region:'north'" style="height:113px;">
+		<div class="title">
+			<div class="title-common-layer">
+				<div class="title-info-box">
+					<span>部门：警视通</span>
+					<span>用户：测试用户</span>
+				</div>
+			</div>
+
+			<div class="title-common-layer">
+				<div class="title-time-box">
+					<span></span>
+					<span></span>
+				</div>
+		
+				<div class="title-btn-box">
+					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-help'" style="margin-top: 1px; width: 60px;">帮助</a>
+					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit'" style="margin-top: 1px; width: 80px;">修改密码</a>
+					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-logout'" style="margin-top: 1px; width: 60px;">注销</a>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<div title="功能菜单" data-options="region:'west',split:true" style="width:245px;">
+		<div class="easyui-accordion" data-options="border:false,fit:true,selected:-1">
+			<div title="基础信息管理" data-options="iconCls:'icon-help'">
+				<ul class="menu-box">
+					<li>
+						<div>
+							<a href="javascript:void(0)" name="system/user_toList.action">
+								<span>用户管理</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)" name="Corp/CorpInfo/CorpInfoList.html">
+								<span>泥头车车辆管理</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>运营商信息查询</span>
+							</a>							
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>两牌两证信息查询</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>泥头车接入信息查询</span>
+							</a>							
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div title="监测监管" data-options="iconCls:'icon-help'">
+				<ul class="menu-box">
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>限时限路监测</span>
+							</a>
+						</div>
+					</li>
+					
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>超速掉线监测</span>
+							</a>
+						</div>
+					</li>
+					
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>超速掉线事件报备与核销管理</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div title="考核评价管理" data-options="iconCls:'icon-help'">
+				<ul class="menu-box">
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>企业考核参数设置</span>
+							</a>
+						</div>
+					</li>
+					
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>企业考核信息管理</span>
+							</a>
+						</div>
+					</li>
+					
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>企业考核评分查询</span>
+							</a>
+						</div>
+					</li>
+					
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>GPS运营商考核评价管理</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div title="不良行为管理" data-options="iconCls:'icon-help'">
+				<ul class="menu-box">
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>泥头车不良行为管理</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div title="统计分析报表" data-options="iconCls:'icon-help'">
+				<ul class="menu-box">
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>泥头车接入信息统计报表</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>泥头车超速事件统计报表</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>泥头车掉线事件统计报表</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>泥头车限时限路统计报表</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>超速掉线事件报备核销统计报表</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>泥头车不良行为记录统计报表</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>GPS运营商考核评价统计报表</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>泥头车企业质量信誉考核评价统计报表</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>泥头车企业综合信息统计报表</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="javascript:void(0)">
+								<span>泥头车行业综合态势分析统计报表</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div data-options="region:'center'" style="width:100%;">
+		<div id="index-tab" class="easyui-tabs" data-options="border:false,fit:true">
+			<div title="首页" style="background-color: #FFFFFF">
+				<img src="images/welcome.jpg">
+			</div>
+		</div>
+	</div>
+	
+	<div id="index-menu" class="easyui-menu" data-options="onShow:menuOnShowHandler" style="width:160px;">
+		<div id="index-menu-closeSelf">关闭标签页</div>
+		<div id="index-menu-closeOthers">关闭其他标签页</div>
+		<div id="index-menu-closeLeft">关闭左侧标签页</div>
+		<div id="index-menu-closeRight">关闭右侧标签页</div>
+		<div id="index-menu-closeAll">关闭所有标签页</div>
+	</div>
+</body>
+<script type="text/javascript">
+$(function(){
+	window.setInterval(function(){
+		var date = new Date();
+		var second = date.getSeconds();
+		
+		date.setSeconds(second, 1000);
+		
+		$(".title-time-box span:last").html(date.toLocaleString());
+	}, 1000)
+	
+	function addSingleTab(titleName, pageHref){
+		
+		if($("#index-tab").tabs("exists",titleName)){
+			$("#index-tab").tabs("select",titleName)
+		}else{
+			$("#index-tab").tabs("add",{
+				title:titleName,
+				href:pageHref,
+				tools:[{
+					iconCls:"icon-mini-refresh",
+					handler:function(){
+						var selItem = $("#index-tab").tabs("getSelected");
+						selItem.panel("refresh");
+					}
+				}],
+				closable:true
+			});
+		}
+	}
+	
+	$(".menu-box li div a").click(function(){
+		var titleName = $(this).text();
+		var pageHref = $(this).attr("name");
+		
+		if($(".menu-box div.selected")){
+			$(".menu-box div.selected").removeClass("selected");
+		}
+		
+		$(this).parent().addClass("selected");
+		
+		addSingleTab(titleName, pageHref);
+		
+	}).hover(function(){
+		$(this).parent().addClass("hover");
+	},function(){
+		$(this).parent().removeClass("hover");
+	});
+	
+	
+	$("#index-tab").on("contextmenu","li:gt(0)",function(event){
+		event.preventDefault();
+		
+		var thisTabTitle = $(this).text();
+		$("#index-tab").tabs("select", thisTabTitle);
+		
+		$("#index-menu").menu("show",{
+			left:event.pageX,
+			top:event.pageY
+		});
+	});
+	
+	$("#index-menu-closeSelf").click(function(){
+		var curTab = $("#index-tab").tabs("getSelected");
+		
+		var curTabTitle = curTab.panel("options").title;
+		
+		$("#index-tab").tabs("close",curTabTitle);
+	});
+	
+	$("#index-menu-closeOthers").click(function(){
+		var curTab = $("#index-tab").tabs("getSelected");
+		
+		var curTabTitle = curTab.panel("options").title;
+		
+		$.each($("#index-tab li"),function(index, obj){
+			
+			var tabTitle = $(obj).text();
+			
+			if(index > 0 && tabTitle != curTabTitle){
+				$("#index-tab").tabs("close", tabTitle);
+			}
+		});
+		
+		$("#index-tab").tabs("select",curTabTitle);
+	});
+	
+	$("#index-menu-closeLeft").click(function(){
+		var curTab = $("#index-tab").tabs("getSelected");
+		
+		var curTabIndex = $("#index-tab").tabs("getTabIndex", curTab);
+		var curTabTitle = curTab.panel("options").title;
+		
+		$.each($("#index-tab li:lt(" + curTabIndex + ")"), function(index, obj){
+			if(index > 0){
+				var tabTitle = $(obj).text();
+				
+				$("#index-tab").tabs("close", tabTitle);
+			}			
+		});
+		
+		$("#index-tab").tabs("select",curTabTitle);
+	});
+	
+	$("#index-menu-closeRight").click(function(){
+		var curTab = $("#index-tab").tabs("getSelected");
+		
+		var curTabIndex = $("#index-tab").tabs("getTabIndex", curTab);
+		var curTabTitle = curTab.panel("options").title;
+		
+		$.each($("#index-tab li:gt(" + curTabIndex + ")"), function(index, obj){
+			var tabTitle = $(obj).text();
+			
+			$("#index-tab").tabs("close", tabTitle);
+		});
+		
+		$("#index-tab").tabs("select",curTabTitle);
+	});
+	
+	$("#index-menu-closeAll").click(function(){
+		var curTab = $("#index-tab").tabs("getSelected");
+		
+		var curTabIndex = $("#index-tab").tabs("getTabIndex", curTab);
+		var curTabTitle = curTab.panel("options").title;
+		
+		$.each($("#index-tab li"), function(index, obj){
+			if(index > 0){
+				var tabTitle = $(obj).text();
+				
+				$("#index-tab").tabs("close", tabTitle);
+			}
+		});
+	});
+	
+});
+
+function menuOnShowHandler(item){
+	var selTab = $("#index-tab").tabs("getSelected");
+	
+	var selTabIndex = $("#index-tab").tabs("getTabIndex", selTab);
+	
+	var leftExist = $("#index-tab li:lt(" + selTabIndex + ")").length - 1 > 0;
+	var rightExist = $("#index-tab li:gt(" + selTabIndex + ")").length > 0;
+	var othersExist = leftExist || rightExist;
+
+	leftExist
+			? $("#index-menu").menu("enableItem",$("#index-menu-closeLeft"))
+			: $("#index-menu").menu("disableItem",$("#index-menu-closeLeft"));
+	
+	rightExist
+			? $("#index-menu").menu("enableItem",$("#index-menu-closeRight"))
+			: $("#index-menu").menu("disableItem",$("#index-menu-closeRight"));
+	
+	
+	othersExist 
+			? $("#index-menu").menu("enableItem",$("#index-menu-closeOthers"))
+			: $("#index-menu").menu("disableItem",$("#index-menu-closeOthers"));
+}
+</script>
+</html>

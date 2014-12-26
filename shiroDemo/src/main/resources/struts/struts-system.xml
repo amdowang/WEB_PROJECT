@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="default" namespace="/system" extends="struts-default">
+		<!-- 验证码 -->
+		<action name="verifyCode" class="com.jst.common.web.VerifyCodeAction">
+		</action>
+		<!-- 用户登陆 -->
+		<action name="userLogin_*" method="{1}"
+			class="com.jst.shiroDemo.web.UserLoginAction">
+			<result name="login">/login.jsp</result>
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="user_*" method="{1}" class="com.jst.shiroDemo.web.UserAction">
+			<result name="list">/system/user/userList.jsp</result>
+			<result name="edit">/system/user/userEdit.jsp</result>
+			<result name="add">/system/user/userAdd.jsp</result>
+		</action>
+	</package>
+</struts>
