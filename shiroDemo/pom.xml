@@ -20,6 +20,12 @@
 		<junit.version>4.11</junit.version>
 		<serlvet.version>2.5</serlvet.version>
 		<jsp.version>2.1</jsp.version>
+		<jetty.version>7.6.11.v20130520</jetty.version>
+		<h2.version>1.3.172</h2.version>
+		<!-- 项目属性 -->
+		<jdbc.driver.groupId>com.h2database</jdbc.driver.groupId>
+		<jdbc.driver.artifactId>h2</jdbc.driver.artifactId>
+		<jdbc.driver.version>${h2.version}</jdbc.driver.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -110,12 +116,6 @@
 			<version>2.4</version>
 			<classifier>jdk15</classifier>
 		</dependency>
-		<!-- 因为版权问题，需要将oracle jar手动添加至本地库 -->
-		<dependency> 
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc14</artifactId>
-			<version>10.2.0.5.0</version>
-		</dependency>
 		<!-- serlvet api -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -137,8 +137,75 @@
 			<scope>system</scope>
 			<systemPath>C:\Program Files\Java\jdk1.6.0_25\lib\tools.jar</systemPath>
 		</dependency>
+		
+		<!-- h2 -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2.version}</version>
+		</dependency>
+		
+		<!-- jetty -->
+		<dependency>
+			<groupId>org.eclipse.jetty.aggregate</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>${jetty.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-jsp</artifactId>
+			<version>${jetty.version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>shiroDemo</finalName>
+		<plugins>
+			<!-- jetty插件, 设定context path与spring profile -->
+			<!-- <plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.version}</version>
+				<configuration>
+					<systemProperties>
+						<systemProperty>
+							<name>spring.profiles.active</name>
+							<value>development</value>
+						</systemProperty>
+					</systemProperties>
+					<useTestClasspath>true</useTestClasspath>
+				
+					<webAppConfig>
+						<contextPath>/${project.artifactId}</contextPath>
+					</webAppConfig>
+				</configuration>
+			</plugin> -->
+			<plugin>  
+        <groupId>org.mortbay.jetty</groupId>  
+        <artifactId>maven-jetty-plugin</artifactId>  
+        <version>6.1.9</version>  
+        <executions>  
+            <execution>  
+                <id>start-jetty</id>  
+                <phase>pre-integration-test</phase>  
+                <goals>  
+                    <goal>run</goal>  
+                </goals>  
+                <configuration>  
+                    <scanIntervalSeconds>0</scanIntervalSeconds>  
+                    <daemon>true</daemon>  
+                </configuration>  
+            </execution>  
+            <execution>  
+                <id>stop-jetty</id>  
+                <phase>post-integration-test</phase>  
+                <goals>  
+                    <goal>stop</goal>  
+                </goals>  
+            </execution>  
+        </executions>  
+    </plugin> 
+		</plugins>
 	</build>
 </project>

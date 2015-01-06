@@ -5,13 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "T_DEPT")
 public class Department {
-	private static final long serialVersionUID = 1L;
 	private Long id;
 	private String deptName;
 	private Integer state;
@@ -20,8 +18,8 @@ public class Department {
 	// private Department parentDept;
 	// private Set<Department> sonDept;
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_T_DEPT")
-	@SequenceGenerator(name="SEQ_T_DEPT",sequenceName="SEQ_T_DEPT",allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -29,7 +27,8 @@ public class Department {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	@Column(name="DEPT_NAME")
+
+	@Column(name = "DEPT_NAME")
 	public String getDeptName() {
 		return deptName;
 	}

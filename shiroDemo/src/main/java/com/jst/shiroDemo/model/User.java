@@ -14,7 +14,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "T_USER")
 public class User {
-	private static final long serialVersionUID = 1L;
 	private Long id;
 	private String userCode;
 	private String userName;
@@ -25,8 +24,7 @@ public class User {
 	private Department dept;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_T_USER")
-	@SequenceGenerator(name = "SEQ_T_USER", sequenceName = "SEQ_T_USER", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long getId() {
 		return id;
 	}
